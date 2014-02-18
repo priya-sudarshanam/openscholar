@@ -1,8 +1,13 @@
 Feature:
   Testing files handling.
 
-  @api @wip
+  @api @wip @momo
   Scenario: files permissions - check direct access for files in vsites
+    Given I am logging in as "john"
+      And I visit "john/file/10/edit"
+      And I fill in "Title" with "momo"
+      And I attach the file "momo.jpg" to "edit-replace-upload"
+     When I press "edit-submit"
 
   @api @wip
   Scenario: files management - see files added from node see in cp/content/files
